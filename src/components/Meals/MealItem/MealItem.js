@@ -12,7 +12,7 @@ const MealItem = (props) => {
                <div className={css.price}>{`$${props.price.toFixed(2)}`}</div>
             </div>
             <div>
-               <MealItemForm></MealItemForm>
+               <MealItemForm id={props.id}></MealItemForm>
             </div>
          </li>
       </Fragment>
