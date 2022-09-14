@@ -5,7 +5,7 @@ import css from "./Modal.module.css";
 const overlayPortal = document.getElementById("overlays");
 
 const Backdrop = (props) => {
-   return <div className={css.backdrop}></div>;
+   return <div className={css.backdrop} onClick={props.onClick}></div>;
 };
 
 const ModalOverlay = (props) => {
@@ -19,7 +19,10 @@ const ModalOverlay = (props) => {
 const Modal = (props) => {
    return (
       <Fragment>
-         {createPortal(<Backdrop></Backdrop>, overlayPortal)}
+         {createPortal(
+            <Backdrop onClick={props.onClose}></Backdrop>,
+            overlayPortal
+         )}
          {createPortal(
             <ModalOverlay>{props.children}</ModalOverlay>,
             overlayPortal

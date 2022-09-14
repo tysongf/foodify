@@ -3,12 +3,15 @@ import mealsImage from "../../assets/meals.jpg";
 import css from "./Header.module.css";
 import HeaderCartButton from "./HeaderCartButton";
 
-const Header = () => {
+const Header = (props) => {
    return (
       <Fragment>
          <header className={css.header}>
             <h1>Foodify</h1>
-            <HeaderCartButton />
+            <HeaderCartButton
+               onClick={props.onShowCart}
+               onClose={props.onHideCart}
+            />
          </header>
          <div className={css["main-image"]}>
             <img src={mealsImage} alt="A table full of delicious food." />
