@@ -1,3 +1,4 @@
+import { useContext } from "react";
 import css from "./AvailableMeals.module.css";
 import MealItem from "./MealItem/MealItem";
 
